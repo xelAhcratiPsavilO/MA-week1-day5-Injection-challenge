@@ -1,8 +1,8 @@
 class Note
-  def initialize(title, body, Formatter_class)
+  def initialize(title, body, formatter_class)
     @title = title
     @body = body
-    @formatter = Formatter_class.new
+    @formatter = formatter_class.new
   end
 
   def display
@@ -12,8 +12,5 @@ class Note
   attr_reader :title, :body
 end
 
-class NoteFormatter
-  def format(note)
-    "Title: #{note.title}\n#{note.body}"
-  end
-end
+formatter_class = NoteFormatter.new
+Note.new('title', 'body', formatter_class)
